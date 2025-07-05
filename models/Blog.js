@@ -2,12 +2,20 @@ import mongoose from "mongoose";
 
 
 const Blogmodels = new mongoose.Schema({
+title:{
+    type:String
+},
+des:{
+    type:String
+},
+image:{
+    type:String
+}
+},{timestamps:true});
 
-},{timestamps,trure});
 
-
-const Blogmodel = mongoose.model('Blog',Blogmodels);
+const Postmodel = mongoose.model('posts',Blogmodels);
 
 
 
-export default Blogmodel;
+export default Postmodel;
