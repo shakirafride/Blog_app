@@ -27,7 +27,8 @@ const Register = async (req, res) => {
         // hash passwr
         const hashpassword = await bycrpt.hash(password, 10)
         // Images path 
-        const imagespath = req.file.filename
+        const imagespath = req.file.filename;
+        console.log('imagepaht',imagespath)
         const Userdata = new UserModel({
             fullname,
             email,
@@ -74,7 +75,6 @@ const Login = async (req, res) => {
         }
         // compare password
         const ComparePassword = await bycrpt.compare(password, Finduser.password);
-        
         if (!ComparePassword) {
             return res.status(404).json({
                 message: 'Invalid password',
