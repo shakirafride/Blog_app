@@ -3,11 +3,16 @@ import backimg from '../../assets/images/image.png'
 import Navbar from '../../components/headerSlider/Navbar'
 import Herosection from './Herosection'
 
+// bg-[#FFFFFF]
 
 export default function Header() {
   return (
     <>
-  <div
+      <div className="absolute w-[100%] top-5 flex justify-center items-center">
+        <Navbar />
+      </div>
+
+      <div
         style={{
           backgroundImage: `url(${backimg})`,
           backgroundSize: 'cover',
@@ -16,12 +21,11 @@ export default function Header() {
           maxWidth: '1440px',
           height: '92vh',// 549px
           margin: '0 auto',
-        position:'fixed',
-        position:'relative'
+          position: 'relative',
         }}
-       >
- <Navbar/>
- <Herosection/>
+        className='flex justify-center   items-center'
+      >
+        <Herosection />
       </div>
     </>
   )

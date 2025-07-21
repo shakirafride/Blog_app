@@ -4,11 +4,11 @@ export default function Herosection() {
   return (
     <>
       {/* // 405 270 */}
-      <section className="hero-section ">
+      <section className="hero-section flex mt-20 text-start w-[100%]  ">
         <div className="hero-content">
           <button
-            className="w-[100px] h-[25px] ml-[370px] mt-[166px] bg-[#81B29A] text-[#FFFFFF]
-   flex items-center justify-center text-sm p-[5] rounded"
+            className="ml-[370px]  bg-[#81B29A] text-[#FFFFFF]
+   text-sm p-[5] rounded"
           >
             Interior Design
           </button>
@@ -17,10 +17,10 @@ export default function Herosection() {
         ">
             Design is a plan for arranging elements in such a way as best to accomplish a particular purpose.
           </h1>
-          <div className="hero-pagination-arrows">
+          {/* <div className="hero-pagination-arrows">
             <button className="arrow-button left-arrow">←</button>
             <button className="arrow-button right-arrow">→</button>
-          </div>
+          </div> */}
         </div>
       </section>
 

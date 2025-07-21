@@ -10,7 +10,11 @@ import commentRoutes from "./routes/Comment.js";
 import publicroute from "./routes/public.js";
 
 dotenv.config();
+const coroption={
+  origin:true,
+  credentials:true
 
+}
 const app = express();
 // db conneted
 Dbconneted();
@@ -19,7 +23,7 @@ Dbconneted();
 app.use(express.static('public'))
 // cookie_parser
 app.use(cookeparse())
-app.use(cors("*"));
+app.use(cors(coroption))
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 

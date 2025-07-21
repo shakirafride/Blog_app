@@ -2,11 +2,13 @@ import UserModel from "../models/Auth.js";
 import Postmodel from "../models/Blog.js";
 import fs from 'fs';
 import path from 'path'
+import CommentModle from "../models/Comment.js";
 
 const GetAdata = async(req,res)=>{
     try {
         const users = await UserModel.find();
         const post = await Postmodel.find();
+        const comments = await CommentModle.find()
 
         // comment will be here
         if(!users && !post){
@@ -18,7 +20,8 @@ const GetAdata = async(req,res)=>{
         res.status(200).json({
             success:true,
             users,
-            post
+            post,
+            comments
         })
     } catch (error) {
          console.log(error)

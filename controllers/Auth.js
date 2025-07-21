@@ -28,7 +28,7 @@ const Register = async (req, res) => {
         const hashpassword = await bycrpt.hash(password, 10)
         // Images path 
         const imagespath = req.file.filename;
-        console.log('imagepaht',imagespath)
+        console.log('imagepaht', imagespath)
         const Userdata = new UserModel({
             fullname,
             email,
@@ -82,23 +82,23 @@ const Login = async (req, res) => {
             });
         }
         // Jwt Token
-        const token = jwt.sign({userId:Finduser._id},
+        const token = jwt.sign({ userId: Finduser._id },
             process.env.JWT_SECREATE
         );
-         // cooke 
-         res.cookie('token',token,{
-            httpOnly:true,
-            secure:false,
-            maxAge:3 * 24 * 60 * 60 * 1000 
-         })
+        // cooke 
+        res.cookie('token', token, {
+            httpOnly: true,
+            secure: false,
+            maxAge: 3 * 24 * 60 * 60 * 1000
+        })
         return res.status(200).json({
             message: 'login successfully',
             user: Finduser,
             token
         });
-       
+
     } catch (error) {
-   console.log(error)
+        console.log(error)
         return res.status(500).json({
             message: "Internal server errer",
             success: false,
@@ -108,15 +108,15 @@ const Login = async (req, res) => {
 }
 
 
-const Logout = async(req,res)=>{
+const Logout = async (req, res) => {
     try {
         res.clearCookie('token')
         res.status(200).json({
-            message:'Logout Successfully',
-            success:true
+            message: 'Logout Successfully',
+            success: true
         })
     } catch (error) {
-          console.log(error)
+        console.log(error)
         return res.status(500).json({
             message: "Internal server errer",
             success: false,
@@ -127,4 +127,4 @@ const Logout = async(req,res)=>{
 
 
 
-export { Register, Login,Logout }
+export { Register, Login, Logout }
